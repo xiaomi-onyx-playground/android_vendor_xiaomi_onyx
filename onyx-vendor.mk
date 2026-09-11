@@ -6,6 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/onyx
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/onyx/proprietary/odm/etc/TcnRecordmodel_8735_w8a16pcq_qnn2_29_0_nhwc.minn:$(TARGET_COPY_OUT_ODM)/etc/TcnRecordmodel_8735_w8a16pcq_qnn2_29_0_nhwc.minn \
     vendor/xiaomi/onyx/proprietary/odm/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb \
     vendor/xiaomi/onyx/proprietary/odm/etc/acdbdata/Fluence/sia91xx/Fluence_acdb_cal_sia.acdb:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/sia91xx/Fluence_acdb_cal_sia.acdb \
     vendor/xiaomi/onyx/proprietary/odm/etc/audio/hrtf5c.bin:$(TARGET_COPY_OUT_ODM)/etc/audio/hrtf5c.bin \
@@ -1058,6 +1059,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/onyx/proprietary/odm/etc/init/init.cirrus.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.cirrus.rc \
     vendor/xiaomi/onyx/proprietary/odm/etc/init/misensor_camera.rc:$(TARGET_COPY_OUT_ODM)/etc/init/misensor_camera.rc \
     vendor/xiaomi/onyx/proprietary/odm/etc/init/vendor.xiaomi.hardware.mlipay-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.xiaomi.hardware.mlipay-service.rc \
+    vendor/xiaomi/onyx/proprietary/odm/etc/init/vendor.xiaomi.hardware.seaaudio.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.xiaomi.hardware.seaaudio.rc \
     vendor/xiaomi/onyx/proprietary/odm/etc/init/vendor.xiaomi.hw.touchfeature-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.xiaomi.hw.touchfeature-service.rc \
     vendor/xiaomi/onyx/proprietary/odm/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc \
     vendor/xiaomi/onyx/proprietary/odm/etc/izat_device.conf:$(TARGET_COPY_OUT_ODM)/etc/izat_device.conf \
@@ -2232,6 +2234,7 @@ PRODUCT_PACKAGES += \
     libQnnSystem \
     libQtiRilLoadable \
     libQtiSocket \
+    libRecordCNN \
     libSEGModel \
     libSNPE \
     libSNPESample \
@@ -3274,6 +3277,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.gnss-V7-ndk \
     vendor.qti.gnss-service \
     vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk \
+    vendor.xiaomi.hardware.seaaudio-V1-ndk \
     vendor.xiaomi.hardware.seccam-V1-ndk \
     odm_lib_rfsa_adsp_capi_elus_rx_so \
     odm_lib_rfsa_adsp_capi_elus_tx_so \
@@ -3401,6 +3405,7 @@ PRODUCT_PACKAGES += \
     manifest_vendor.xiaomi.hardware.mlipay.xml \
     misensor_camera.xml \
     vendor.qti.gnss-service.xml \
+    vendor.xiaomi.hardware.seaaudio.xml \
     vendor.xiaomi.hw.touchfeature-service.xml \
     vendor.xiaomi.sensor.citsensorservice.aidl.xml \
     SoterProvisioningTool \
@@ -3508,6 +3513,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-aidl-service-qti \
     dvs-aidl-service \
     misensor_camera \
+    vendor.xiaomi.hardware.seaaudio-service \
     vendor.xiaomi.hw.touchfeature-service \
     vendor.xiaomi.sensor.citsensorservice.aidl \
     mlipayd \

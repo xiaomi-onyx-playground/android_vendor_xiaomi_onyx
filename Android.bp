@@ -10485,6 +10485,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libRecordCNN",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libRecordCNN.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libc++_shared",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libSEGModel",
     owner: "xiaomi",
     strip: {
@@ -41917,6 +41942,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.xiaomi.hardware.seaaudio-V1-ndk",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.xiaomi.hardware.seaaudio-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.xiaomi.hardware.seccam-V1-ndk",
     owner: "xiaomi",
     strip: {
@@ -43118,6 +43168,15 @@ prebuilt_etc_xml {
     name: "vendor.qti.gnss-service.xml",
     owner: "xiaomi",
     src: "proprietary/odm/etc/vintf/manifest/vendor.qti.gnss-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    device_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "vendor.xiaomi.hardware.seaaudio.xml",
+    owner: "xiaomi",
+    src: "proprietary/odm/etc/vintf/manifest/vendor.xiaomi.hardware.seaaudio.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     device_specific: true,
@@ -46367,6 +46426,38 @@ cc_prebuilt_binary {
                 "libui",
                 "libutils",
                 "vendor.xiaomi.sensor.camera-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    device_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.xiaomi.hardware.seaaudio-service",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/bin/hw/vendor.xiaomi.hardware.seaaudio-service",
+            ],
+            shared_libs: [
+                "libutils",
+                "libbase",
+                "liblog",
+                "libbinder_ndk",
+                "vendor.xiaomi.hardware.seaaudio-V1-ndk",
+                "libcutils",
+                "libRecordCNN",
                 "libc++",
                 "libc",
                 "libm",
